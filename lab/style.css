@@ -1,0 +1,538 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+    
+}
+
+body{ 
+   
+    background-color: #252839;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+}
+
+header{
+    margin-bottom: 50px;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    padding: 20px 100px;
+    width: 100%;
+    z-index: 99;
+    
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-left: 40px;
+    color: yellowgreen;
+    text-decoration: none;
+}
+
+.animation-text{
+    display: flex;
+    position: absolute;
+ }
+
+.animation-text h2{
+  margin-top: 100px;
+  margin-left: 100px;
+  position: absolute;
+  font-size: 4vw;
+  color: #252839;
+  -webkit-text-stroke: 1px #383d52;
+  text-transform: uppercase;
+  
+    
+}
+
+.animation-text h2::before{
+    content: attr(data-text);
+    position: absolute;
+    font-size: 4vw;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #01fe87;
+    animation: animate 2.5s ;
+    border-right: .5px solid #01fe87;
+    animation-iteration-count: 1;
+ }
+ 
+ @keyframes animate {
+ 
+     0%
+      {
+         width:0;
+         overflow: hidden;
+         
+         
+     }
+     100%{
+         width: 100%;
+         overflow: hidden;
+     
+     }
+   
+ }
+
+ .animation-text h3{ 
+    margin-left: 100px;
+    margin-top: 70px;
+    font-size: 1vw;
+    color: #252839;
+    text-transform: uppercase;     
+  }
+
+.animation-text h3::before{
+    content: attr(data-text);
+    position: absolute;
+    font-size: 1vw;
+    top: 160px;
+    left: 100px;
+    width: 100%;
+    height: 20%;
+    color: aqua;
+    animation: animate-text 5s ;
+    animation-iteration-count: 1;
+
+ }
+
+.animation-text h4{
+    margin-top: 180px;
+    margin-left: 100px;
+    position: absolute;
+    font-size: 1vw;
+    color: #252839;
+    text-transform: uppercase;  
+ }
+
+ .animation-text h4::before{
+    content: attr(data-text);
+    position: absolute;
+    font-size: 1vw;
+    width: 100%;
+    height: 100%;
+    color: aqua;
+    animation: animate-text 5s ;
+    animation-iteration-count: 1;
+
+ }
+
+ @keyframes animate-text {
+ 
+    0%
+     {
+        width:0;
+        overflow: hidden;
+        color: #01fe87 ;
+          
+    }
+    100%{
+        width:100%;
+        overflow: hidden;
+        color: #01fe87;
+    
+    }
+  
+}
+
+
+
+/* Login-Registration part start from here */
+.wrapper {
+    position: relative;
+    width: 400px;
+    height:440px;
+    background: transparent;
+    margin-top: 150px;
+    margin-left: 850px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 40px;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    transform: scale(0);
+}
+
+.wrapper.active-popup{
+    transform: scale(1);
+}
+
+.wrapper.active{
+    height:520px
+}
+.wrapper .login-box{
+    transition: -18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .login-box{
+    transition: none;
+    transform: translateX(-400px) ;
+}
+.wrapper .register-box{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .register-box{
+    transition:  -18s ease;
+    transform: translateX(0);
+}
+.wrapper .login-box{
+    color: #fff;
+    width: 100%;
+    padding: 40px;
+}
+
+.login-box h2{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid #000000;
+    margin: 40px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top:50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 200%;
+    margin: -10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    margin-left: 4px;
+    font-size: 1em;
+    color: white;
+    font-weight: 600;
+    
+}
+
+.input-box .icon{
+    position: absolute;
+    right: -2px;
+    font-size: 1.5em;
+    color: aqua;
+    margin-top: 2px;
+}
+
+.remember-forgot{
+    font-size: .9em;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: -30px 0 30px;
+    
+}
+
+.remember-forgot label input{
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a{
+    color: violet;
+    text-decoration: none;
+    
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.OTP-Register{
+    display: inline-block;
+    padding: 15px 32px; 
+    text-decoration: none;
+    display: inline-block;
+    text-decoration: none; 
+    outline: none;
+    border: 1px solid #01fe87;;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    align-items: center;
+    width:100%;
+    height: 50px;
+
+}
+ .OTP-Register a{
+    position: absolute;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items:center ;
+    margin-left: 90px;
+    
+    
+}
+.register-box form input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+.stop{
+    transition: 0.4s;
+}
+
+.move{
+    
+    transform: translateX(50%);
+    
+}
+
+/* Moving loging button design and all */
+form input[type="submit"]{
+    width: 100px;
+    height: 45px;
+    background:#162938;
+    border-radius: 6px;
+    border-color: #01fe87;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 1px; 
+    justify-items: center;
+
+    
+}
+
+form input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+.stop{
+    transition: 0.3s;
+}
+
+.move{
+    
+    transform: translateX(200%);
+    
+}
+
+.login-register p{
+    font-size: 1.3em;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 25px;
+    
+
+}
+
+/* Register section here*/
+.login-as a{
+    font-size: 1rem;
+    color: white;
+    justify-content: space-between;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    margin-left:30px;
+    margin-top: 30px;
+    border: 1px solid aqua;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+}
+
+.login-as a:hover{
+    background-color: #01fe87;
+    color: black;
+}
+
+
+
+/* Button part design */
+
+.btn-container a{
+    
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 220px;
+    margin-left: 180px;
+    color: white;
+    text-decoration: none; 
+    outline: none;
+    border: 1px solid#fff;
+    border-radius: 6px;
+    border-color: aqua;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 200;
+    transition: .5s;  
+    display: inline-block;
+    padding: 15px 32px;
+   
+    
+}
+
+.btn-container .btn1{
+    font-size: 1rem;
+}
+.btn-container .btn2{
+    font-size: 1rem;
+    margin-left: 200px;   
+}
+
+.btn-container a:hover{
+    background-color: #01fe87;
+    color: black;
+}
+
+
+/*OTP Section Design Here**************************/
+
+:where(.OPT-wrapper, .container, .input-field, header) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.OTP-wrapper{
+    position: relative;
+    width: 400px;
+    height:440px;
+    background: transparent;
+    margin-top: 150px;
+    margin-left: 500px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 40px;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    background-color: #fff;   
+}
+.container {
+  min-height: 100vh;
+  padding: 30px 65px;
+  border-radius: 12px;
+  row-gap: 20px;
+  
+}
+.container header {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+  width: 65px;
+  background: #4070f4;
+  color: black;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  margin-top: 80px;
+  margin: -20px;
+  padding: 5;
+}
+.container h4 {
+  font-size: 1.25rem;
+  color: black;
+  font-weight: 500;
+}
+.container h2{
+    color: black;
+    margin-bottom: 30px;
+    font-weight: 1rem;
+}
+form .input-field {
+  flex-direction: row;
+  column-gap: 10px;
+}
+.input-field input {
+  height: 45px;
+  width: 42px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1.125rem;
+  text-align: center;
+  border: 1px solid aqua;
+}
+.input-field input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.input-field input::-webkit-inner-spin-button,
+.input-field input::-webkit-outer-spin-button {
+  display: none;
+}
+.verify {
+ position: absolute;
+  width: 27%;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  padding: 9px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  background: #6e93f7;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  padding: 15px 15px;
+  margin: 40px;
+  margin-top: 10px;
+ 
+  
+}
+.verify.active {
+  background: #4070f4;
+  pointer-events: auto;
+}
+.verify:hover {
+  background: #0e4bf1;
+}
+
+.register-box h2{
+    color: white;
+}
+.register-link{
+    color: white;
+}
+.login-link{
+    color: white;
+}

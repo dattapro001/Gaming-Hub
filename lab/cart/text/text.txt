@@ -1,0 +1,30 @@
+<td><img src="../image/<?php echo
+        $rows['image'] ?>" width="60px" height="60px"></td>
+
+
+
+
+        // $row_count = mysqli_num_rows($allData);
+    // echo $row_count;
+    if(mysqli_num_rows($allData)>0)
+    {
+    while($row=mysqli_fetch_array($allData))
+    {
+    ?>
+     
+     <tr>
+        <td><?php echo $row['id']?></td>
+        <td><?php echo $row['name']?></td>
+        <td><?php echo $row['price']?></td>
+        <td><img src="../image/<?php echo
+        $rows['image'] ?>" width="60" height="60">
+        </td>
+        <td><a  class='btn btn-warning' href = 'update.php'>Update</a></td>
+        <td><a  class='btn btn-danger' href = "./delete.php/id= <?
+        php echo $rows['id'] ?>" >Delate</a>
+        
+    </td>
+        </tr>
+      <?php
+    }
+   }
